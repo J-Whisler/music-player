@@ -1,4 +1,7 @@
 import React from "react";
+// import Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Player = () => {
   return (
@@ -8,7 +11,9 @@ const Player = () => {
         <input type="range" />
         <p>End Time</p>
       </div>
-      <div className="play-control"></div>
+      <div className="play-control">
+        <FontAwesomeIcon className="play" icon={faPlay} />
+      </div>
     </div>
   );
 };
