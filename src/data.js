@@ -62,6 +62,26 @@ function chillHop() {
       active: false,
     },
     //ADD MORE HERE
+    {
+      name: "Trenches",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/09/2899f7cc22ab12e17d0119819aac3ca9dbab46e6-1024x1024.jpg",
+      artist: "Philanthrope, Sleepy Fish",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10247",
+      color: ["#2B2F1D", "#D94F42"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Witch Hat",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/09/c209a7df7b9bc133dfff73ce86ebc3c57c2b73dd-1024x1024.jpg",
+      artist: "Sleepy Fish",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10017",
+      color: ["#CCE0E1", "#225173"],
+      id: uuidv4(),
+      active: false,
+    },
   ];
 }
 
