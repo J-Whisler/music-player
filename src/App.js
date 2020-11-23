@@ -10,12 +10,12 @@ import data from "./data.js";
 function App() {
   // State
   const [songs, setsongs] = useState(data());
-  const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [currentSong, setCurrentSong] = useState(songs[4]);
 
   return (
     <div className="App">
       <Song currentSong={currentSong} />
-      <Player />
+      <Player currentSong={currentSong} />
     </div>
   );
 }
