@@ -11,7 +11,7 @@ const Player = ({ currentSong }) => {
   // Event Handlers
   const audioRef = useRef(null);
   const playSongHandler = () => {
-    console.log(audioRef.current);
+    audioRef.current.play();
   };
   return (
     <div className="player">
