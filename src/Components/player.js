@@ -43,7 +43,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
         <input type="range" />
-        <p>{getTime(songInfo.duration)}</p>
+        <p>{getTime(songInfo.duration - songInfo.currentTime)}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon className="skip-back" icon={faAngleLeft} size="2x" />
