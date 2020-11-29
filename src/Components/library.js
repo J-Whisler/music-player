@@ -14,4 +14,5 @@ const library = ({ songs }) => {
   );
 };
 
-export default import("@fortawesome/fontawesome-svg-core").Library;
+// export default import("@fortawesome/fontawesome-svg-core").Library;
+export default library;
