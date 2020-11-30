@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,6 +50,12 @@ const Player = ({
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
   };
+
+  useEffect(() => {
+    if (isPlaying && audioRef.current.paused) {
+      audioRef.current.play();
+    }
+  }, [isPlaying, currentSong]);
 
   return (
     <div className="player">
