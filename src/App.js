@@ -12,7 +12,7 @@ function App() {
   // Ref
   const audioRef = useRef(null);
   // State
-  const [songs, setsongs] = useState(data());
+  const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[4]);
   const [isPlaying, setIsPlaying] = useState(false);
   // const [songInfo, setSongInfo] = useState({
@@ -37,6 +37,7 @@ function App() {
         currentSong={currentSong}
       />
       <Library
+        setSongs={setSongs}
         audioRef={audioRef}
         setCurrentSong={setCurrentSong}
         songs={songs}
