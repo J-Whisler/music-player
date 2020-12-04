@@ -1,12 +1,12 @@
 import React from "react";
-
+import { playAudio } from "../util";
 const LibrarySong = ({
-  // isPlaying,
+  isPlaying,
   song,
   songs,
   setCurrentSong,
   id,
-  // audioRef,
+  audioRef,
   setSongs,
 }) => {
   const songSelectHandler = () => {
@@ -28,6 +28,7 @@ const LibrarySong = ({
       }
     });
     setSongs(newSongs);
+    playAudio(isPlaying, audioRef);
 
     // if (isPlaying) {
     //   const playPromise = audioRef.current.play();
