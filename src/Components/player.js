@@ -17,6 +17,7 @@ const Player = ({
   setIsPlaying,
   songs,
   setCurrentSong,
+  setSongs,
 }) => {
   // Event Handlers
 
@@ -73,6 +74,24 @@ const Player = ({
       audioRef.current.play();
     }
   }, [isPlaying, currentSong]);
+
+  useEffect(() => {
+    // Add active state
+    const newSongs = songs.map((song) => {
+      if (song.id === currentSong.id) {
+        return {
+          ...song,
+          active: true,
+        };
+      } else {
+        return {
+          ...song,
+          active: false,
+        };
+      }
+    });
+    setSongs(newSongs);
+  }, [currentSong]);
 
   return (
     <div className="player">
