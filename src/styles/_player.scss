@@ -14,13 +14,17 @@
     width: 100%;
     padding: 1rem 0rem;
     cursor: pointer;
+    // -webkit-appearance: none;
+    // height: 0.5rem;
+    // background: transparent;
+    background: lightcoral;
   }
 
   p {
     padding: 1rem;
     margin: auto 1rem;
     font-size: 2rem;
-    // text-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    text-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
 }
 
@@ -34,6 +38,37 @@
     cursor: pointer;
   }
 }
+
+// input[type="range"]:focus {
+//   outline: none;
+// }
+
+// input[type="range"]::-webkit-slider-thumb {
+//   -webkit-appearance: none;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .track {
+//   background: lightblue;
+//   width: 100%;
+//   height: 1rem;
+//   position: relative;
+//   border-radius: 1rem;
+//   overflow: hidden;
+//   margin-top: 1.7rem;
+// }
+
+// .animate-track {
+//   background: rgb(173, 162, 162);
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   transform: translateX(0%);
+//   pointer-events: none;
+// }
 
 // input[type="range"] {
 //   -webkit-appearance: none;
