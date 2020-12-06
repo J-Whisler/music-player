@@ -73,12 +73,12 @@ const Player = ({
     if (direction === "skip-back") {
       if ((currentIndex - 1) % songs.length === -1) {
         setCurrentSong(songs[songs.length - 1]);
-        playAudio(isPlaying, audioRef);
+        if (isPlaying) audioRef.current.play();
         return;
       }
       setCurrentSong(songs[(currentIndex - 1) % songs.length]);
     }
-    if (is Playing) audioRef.currentTime.play();
+    if (isPlaying) audioRef.current.play();
   };
 
   useEffect(() => {
