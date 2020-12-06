@@ -64,31 +64,7 @@ const Player = ({
     );
   };
 
-  const skipTrackHandler = async (direction) => {
-    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    if (direction === "skip-forward") {
-      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    }
-
-    if (direction === "skip-back") {
-      if ((currentIndex - 1) % songs.length === -1) {
-        setCurrentSong(songs[songs.length - 1]);
-        if (isPlaying) audioRef.current.play();
-        return;
-      }
-      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
-    }
-    if (isPlaying) audioRef.current.play();
-  };
-
-  useEffect(() => {
-    if (isPlaying && audioRef.current.paused) {
-      audioRef.current.play();
-    }
-  }, [isPlaying, currentSong]);
-
-  useEffect(() => {
-    // Add active state
+  const activeLibraryHandler = () => {
     const newSongs = songs.map((song) => {
       if (song.id === currentSong.id) {
         return {
@@ -103,7 +79,33 @@ const Player = ({
       }
     });
     setSongs(newSongs);
-  }, [currentSong]);
+  };
+
+  const skipTrackHandler = async (direction) => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    if (direction === "skip-forward") {
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
+    }
+
+    if (direction === "skip-back") {
+      if ((currentIndex - 1) % songs.length === -1) {
+        await setCurrentSong(songs[songs.length - 1]);
+        activeLibraryHandler(songs[currentIndex - 1]);
+        if (isPlaying) audioRef.current.play();
+        return;
+      }
+      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex - 1) % songs.length]);
+    }
+    if (isPlaying) audioRef.current.play();
+  };
+
+  useEffect(() => {
+    if (isPlaying && audioRef.current.paused) {
+      audioRef.current.play();
+    }
+  }, [isPlaying, currentSong]);
 
   // const trackAnim = {
   //   transform: `translateX(${songInfo.animationPercentage}%)`,
