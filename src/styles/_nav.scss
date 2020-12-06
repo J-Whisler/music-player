@@ -18,3 +18,11 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 769px) {
+  nav {
+    button {
+      z-index: 10;
+    }
+  }
+}
